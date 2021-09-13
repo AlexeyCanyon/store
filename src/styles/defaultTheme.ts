@@ -7,11 +7,13 @@ declare module "styled-components" {
   }
 }
 
-const colors: Colors = {
+export const colors: Colors = {
   whiteColor: '#ffffff',
   greyColor: '#bdbdbd',
   mainColor: '#5F3EC0',
-  blackColor: '#303030',
+  // Было #303030;
+  blackColor: '#121212',
+  ghostWhite: '#F9F8FF',
 };
 
 export const defaultTheme: DefaultTheme = {

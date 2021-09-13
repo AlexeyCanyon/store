@@ -1,6 +1,11 @@
 import { createGlobalStyle, css } from "styled-components";
 import { TTNormsBold, TTNormsRegular, TTNormsMedium } from '../assets/fonts/index';
 
+export const boldFont = css`
+    font-family: 'TT Norm bold';
+    color: ${({ theme }) => theme.blackColor};
+`;
+
 export const mediumFont = css`
     font-family: 'TT Norm medium';
     font-size: 16px;
@@ -36,6 +41,10 @@ export const GlobalStyle = createGlobalStyle`
     src: url(${TTNormsMedium}) format('woff');
   }
 
+  * {
+    box-sizing: border-box;
+  }
+
   body {
     margin: 0;
     ${mediumFont}
@@ -49,10 +58,22 @@ export const GlobalStyle = createGlobalStyle`
 
   a {
     color: inherit;
+    text-decoration: none;
+  }
+
+  button {
+    background-color: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
   }
 
   p, h1, h2, h3, h4, h5, h6 {
     margin: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    ${boldFont}
   }
 
   input, select, textarea, button {

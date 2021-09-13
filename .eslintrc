@@ -23,6 +23,7 @@
         "args": "none"
       }
     ],
+    "@typescript-eslint/no-unused-expressions": ["error", { "allowTernary": true }],
     "@typescript-eslint/no-unused-vars": [
       "warn",
       {
@@ -71,6 +72,7 @@
     "@typescript-eslint/comma-dangle": "off",
     "no-loop-func": "off",
     "@typescript-eslint/no-loop-func": "off",
-    "react-hooks/exhaustive-deps": "error"
+    "react-hooks/exhaustive-deps": "error",
+    "no-underscore-dangle": "off"
   }
 }

@@ -8,7 +8,10 @@ import { menuItems, toolbarMenuItems } from './mockData';
 
 import * as S from './styles';
 
-const Header: FC = () => (
+const Header: FC = () => {
+  console.log();
+
+  return (
     <S.Header>
       <img src={LogoImage} alt="Logo" />
       <S.Menu>
@@ -38,5 +41,6 @@ const Header: FC = () => (
       </S.Toolbar>
     </S.Header>
   );
+};
 
 export default Header;

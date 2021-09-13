@@ -3,8 +3,10 @@ import { RefObject, useCallback, useEffect, useRef } from "react";
 const useClickOutside = <T extends HTMLElement>(onClose: VoidFunction): RefObject<T> => {
   const ref = useRef<T>(null);
 
-  const mouseListener = useCallback((event) => {
-    if (!ref.current?.contains(event.target)) {
+  const mouseListener = useCallback((event: MouseEvent) => {
+    // TODO: Убрать ASS
+    if (!ref.current?.contains(event.target as Node)) {
+      event.preventDefault();
       onClose();
     }
   }, [onClose]);

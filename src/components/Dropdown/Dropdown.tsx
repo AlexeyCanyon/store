@@ -4,12 +4,13 @@ import useClickOutside from '../../utils/hooks/useClickOutside/useClickOutside';
 
 import * as S from './styles';
 
-const Dropdown: FC<IDropdownProps> = ({ children, title, icon }) => {
+const Dropdown: FC<IDropdownProps> = ({ children, title, icon, arrow, customStyle }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const ref = useClickOutside<HTMLDivElement>(() => setIsOpen(false));
+  
   const dropdown = (
-    <S.DropdownContainer>
+    <S.DropdownContainer arrow={arrow} customStyle={customStyle}>
       {children}
     </S.DropdownContainer>
   );

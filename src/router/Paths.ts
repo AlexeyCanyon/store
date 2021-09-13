@@ -1,5 +1,7 @@
 const paths = {
-  root: '/',
+  mainPage: '/',
+  catalog: '/catalog',
+  personalAccount: '/personal-account'
 };
 
 export default paths;
