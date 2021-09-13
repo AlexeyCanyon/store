@@ -7,17 +7,34 @@ module.exports = {
   output: {
     path: path.join(__dirname, '/dist'),
     filename: 'index_bundle.js',
+    publicPath: '/'
   },
   resolve: {
     extensions: ['.js','.ts', '.tsx'],
   },
+  devServer: {
+    historyApiFallback: true,
+    hot: true
+  },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(ts|tsx)?$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env", "@babel/preset-react"],
+            plugins: [
+              [
+              "babel-plugin-styled-components",
+                {
+                  displayName: true,
+                  fileName: false,
+                }
+              ]
+            ]
+          }
         },
       },
       {
