@@ -7,7 +7,7 @@ const createDoubleSubMenu = (prefix: string) => {
   .fill({
     id: 1,
     title: `SubItem 2 ${prefix}`,
-    subItems: createItems
+    subItems: createItems.slice(0,3)
       .fill({
         title: `SubItem 3 ${prefix}`,
       })
